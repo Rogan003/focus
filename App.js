@@ -1,20 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { NativeRouter, Routes, Route } from 'react-router-native';
+
+import HomePage from './components/HomePage'
+import Login from './components/Login'
+import Register from './components/Register'
+import ProfilePage from './components/ProfilePage'
+import AddActivity from './components/AddActivity'
+import DisplayActivity from './components/DisplayActivity'
+import LogActivity from './components/LogActivity'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeRouter>
+      <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
+          <Routes>
+            <Route path = "/" element = {<HomePage />} />
+            <Route path = "/login" element = {<Login />} />
+            <Route path = "/register" element = {<Register />} />
+            <Route path = "/:key" element = {<ProfilePage />} />
+            <Route path = "/addact" element = {<AddActivity />} />
+            <Route path = "/disact" element = {<DisplayActivity />} />
+            <Route path = "/logact" element = {<LogActivity />} />
+          </Routes>
+          <StatusBar style = 'auto'></StatusBar>
+      </SafeAreaView>
+    </NativeRouter>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
