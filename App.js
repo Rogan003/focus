@@ -14,7 +14,7 @@ import SafeViewAndroid from "./components/SafeViewAndroid"
 export default function App() {
   return (
     <NativeRouter>
-      <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
+      <SafeAreaView style = {[SafeViewAndroid.AndroidSafeArea, {flexGrow : 1, backgroundColor : "#FBFBFB"}]}>
           <Routes>
             <Route path = "/" element = {<HomePage />} />
             <Route path = "/login" element = {<Login />} />
