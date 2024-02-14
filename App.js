@@ -9,6 +9,7 @@ import ProfilePage from './components/ProfilePage'
 import AddActivity from './components/AddActivity'
 import DisplayActivity from './components/DisplayActivity'
 import LogActivity from './components/LogActivity'
+import SafeViewAndroid from "./components/SafeViewAndroid"
 
 export default function App() {
   return (

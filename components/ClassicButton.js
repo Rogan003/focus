@@ -2,10 +2,14 @@ import React from 'react'
 
 import { Button, Pressable } from 'react-native'
 
+import InriaText from './InriaText'
+
 const ClassicButton = (props) => {
   return (
-    <Pressable style = {{borderRadius : '8%', backgroundColor : props.color, boxShadow : '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
-      <Button title = {props.title} onPress = {() => props.func} color = {props.color} />
+    <Pressable onPress = {props.func} 
+    style = {{borderRadius : '8%', backgroundColor : props.color, shadowColor: '#171717', shadowOffset: {width: -1, height: 4}, shadowOpacity: 0.2,
+    shadowRadius: 4, padding : props.padding}}>
+      <InriaText text = {props.title}  color = {props.fontColor} size = {23} center = {true} bold = {true} />
     </Pressable>
   )
 }
