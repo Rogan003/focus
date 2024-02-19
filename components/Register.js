@@ -14,8 +14,9 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const loginFunc = () => {
-    console.log("Hey")
+  const registerFunc = () => {
+    // proverimo da li taj email vec postoji (mozda radi auth to sam), nakon toga kreiramo ovog korisnika i ulogujemo ga (ne mora jedinstven username i nista bukv, mozda samo neka zastita za sifru, mada ovo bolje ostaviti auth-u i ne cuvati u realtime db)
+    navigate("/" + email)
   }
 
   const picPicture = () => {
@@ -43,7 +44,7 @@ const Register = () => {
       
       <View style = {{display : 'flex', flexDirection : 'row', justifyContent : 'center', padding : '5%', paddingTop : "0%"}}>
         <ClassicButton title = "Back" func = {() => navigate(-1)} color = "#F04A4A" pressColor = "#D02919" fontColor = "#830000" padding = "4%" margin = "5%" />
-        <ClassicButton title = "Register" func = {() => loginFunc()} color = "#2AD526" pressColor = "#18C314" fontColor = "#107400" padding = "4%" margin = "5%" />
+        <ClassicButton title = "Register" func = {() => registerFunc()} color = "#2AD526" pressColor = "#18C314" fontColor = "#107400" padding = "4%" margin = "5%" />
       </View>
 
     </View>

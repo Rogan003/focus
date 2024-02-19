@@ -14,7 +14,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const loginFunc = () => {
-    console.log("Hey")
+    // provera postojanja email-a i passworda, ako postoji, idemo na tog korisnika
+    navigate("/" + email)
   }
 
   return (
