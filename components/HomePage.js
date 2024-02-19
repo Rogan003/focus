@@ -17,8 +17,8 @@ const HomePage = () => {
       </View>
       
       <View style = {{padding : '5%'}}>
-        <ClassicButton title = "Login" func = {() => navigate("/login")} color = "#E1E1E1" fontColor = "#000000" padding = "3%" margin = "2%" />
-        <ClassicButton title = "Register" func = {() => navigate("/register")} color = "#E1E1E1" fontColor = "#000000" padding = "3%" margin = "2%" />
+        <ClassicButton title = "Login" func = {() => navigate("/login")} color = "#E1E1E1" pressColor = "#CACACA" fontColor = "#000000" padding = "3%" margin = "2%" />
+        <ClassicButton title = "Register" func = {() => navigate("/register")} color = "#E1E1E1" pressColor = "#CACACA" fontColor = "#000000" padding = "3%" margin = "2%" />
       </View>
 
     </View>
