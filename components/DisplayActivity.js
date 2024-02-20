@@ -1,12 +1,16 @@
 import React from 'react'
 
-import { View } from 'react-native'
+import { Pressable } from 'react-native'
+import { useNavigate } from 'react-router-native'
 
-const DisplayActivity = () => {
+const DisplayActivity = (props) => {
+  const navigate = useNavigate();
+
   return (
-    <View>
-      
-    </View>
+    <Pressable onPress = {() => navigate("disact")}
+    style = {{borderRadius : "10%", width : "80%", height : "17%", backgroundColor : props.color, margin : '5%', shadowOffset: {width: -1, height: 4}, shadowOpacity: 0.2, shadowRadius: 4}}>
+
+    </Pressable>
   )
 }
 

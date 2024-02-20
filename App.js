@@ -20,9 +20,9 @@ export default function App() {
             <Route path = "/login" element = {<Login />} />
             <Route path = "/register" element = {<Register />} />
             <Route path = "/:key" element = {<ProfilePage />} />
-            <Route path = "/addact" element = {<AddActivity />} />
-            <Route path = "/disact" element = {<DisplayActivity />} />
-            <Route path = "/logact" element = {<LogActivity />} />
+            <Route path = "/:key/addact" element = {<AddActivity />} />
+            <Route path = "/:key/disact" element = {<DisplayActivity />} />
+            <Route path = "/:key/logact" element = {<LogActivity />} />
           </Routes>
           <StatusBar style = 'auto'></StatusBar>
       </SafeAreaView>

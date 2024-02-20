@@ -16,6 +16,9 @@ const Register = () => {
 
   const registerFunc = () => {
     // proverimo da li taj email vec postoji (mozda radi auth to sam), nakon toga kreiramo ovog korisnika i ulogujemo ga (ne mora jedinstven username i nista bukv, mozda samo neka zastita za sifru, mada ovo bolje ostaviti auth-u i ne cuvati u realtime db)
+    
+    // provera da li ima vise od 8 karaktera korisnicko ime, zbog prikaza zabraniti ovo?
+
     navigate("/" + email)
   }
 
