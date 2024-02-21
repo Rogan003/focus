@@ -8,7 +8,7 @@ const DisplayActivity = (props) => {
 
   return (
     <Pressable onPress = {() => navigate("disact")}
-    style = {{borderRadius : "10%", width : "80%", height : "17%", backgroundColor : props.color, margin : '5%', shadowOffset: {width: -1, height: 4}, shadowOpacity: 0.2, shadowRadius: 4}}>
+    style = {{borderRadius : 8, width : 25, height : 25, backgroundColor : props.color, margin : 6, shadowOffset: {width: -1, height: 4}, shadowOpacity: 0.2, shadowRadius: 4}}>
 
     </Pressable>
   )

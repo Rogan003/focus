@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, ScrollView, Text } from 'react-native';
 import { NativeRouter, Routes, Route } from 'react-router-native';
 
 import HomePage from './components/HomePage'
@@ -14,7 +14,7 @@ import SafeViewAndroid from "./components/SafeViewAndroid"
 export default function App() {
   return (
     <NativeRouter>
-      <SafeAreaView style = {[SafeViewAndroid.AndroidSafeArea, {flexGrow : 1, backgroundColor : "#CCCCCC"}]}>
+      <SafeAreaView style = {[{backgroundColor : "#CCCCCC", flex : 1}, SafeViewAndroid.AndroidSafeArea]}>
           <Routes>
             <Route path = "/" element = {<HomePage />} />
             <Route path = "/login" element = {<Login />} />
@@ -24,8 +24,20 @@ export default function App() {
             <Route path = "/:key/disact" element = {<DisplayActivity />} />
             <Route path = "/:key/logact" element = {<LogActivity />} />
           </Routes>
-          <StatusBar style = 'auto'></StatusBar>
       </SafeAreaView>
     </NativeRouter>
   );
 }
+
+/*
+      <ScrollView>
+        <Text style = {{fontSize : 100}}>H</Text>
+        <Text style = {{fontSize : 100}}>H</Text>
+        <Text style = {{fontSize : 100}}>H</Text>
+        <Text style = {{fontSize : 100}}>H</Text>
+        <Text style = {{fontSize : 100}}>H</Text>
+        <Text style = {{fontSize : 100}}>H</Text>
+        <Text style = {{fontSize : 100}}>H</Text>
+        <Text style = {{fontSize : 100}}>H</Text>
+      </ScrollView>
+      */

@@ -7,7 +7,7 @@ import AddButton from './AddButton'
 import DisplayActivity from './DisplayActivity'
 
 const Activity = (props) => {
-  const [allDates, setAllDates] = useState([]);
+  const [allDates, setAllDates] = useState([[]]);
 
   useEffect(() => {
     let day = new Date();
@@ -32,8 +32,8 @@ const Activity = (props) => {
   }, []);
 
   return (
-    <View style = {{display : 'flex', flexDirection : 'column'}}>
-      <View style = {{display : 'flex', flexDirection : 'row', justifyContent : 'flex-start', padding : "5%"}}>
+    <View>
+      <View style = {{display : 'flex', flexDirection : 'row', padding : "5%"}}>
         <InriaText text = {props.activity.name} bold = {true} shadows = {false} size = {25} center = {true} />
 
         <View style = {{paddingLeft : '5%'}}>
