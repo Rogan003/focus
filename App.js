@@ -7,7 +7,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import ProfilePage from './components/ProfilePage'
 import AddActivity from './components/AddActivity'
-import DisplayActivity from './components/DisplayActivity'
+import DisplayField from './components/DisplayField';
 import LogActivity from './components/LogActivity'
 import SafeViewAndroid from "./components/SafeViewAndroid"
 
@@ -21,23 +21,10 @@ export default function App() {
             <Route path = "/register" element = {<Register />} />
             <Route path = "/:key" element = {<ProfilePage />} />
             <Route path = "/:key/addact" element = {<AddActivity />} />
-            <Route path = "/:key/disact" element = {<DisplayActivity />} />
+            <Route path = "/:key/disact" element = {<DisplayField />} />
             <Route path = "/:key/logact" element = {<LogActivity />} />
           </Routes>
       </SafeAreaView>
     </NativeRouter>
   );
 }
-
-/*
-      <ScrollView>
-        <Text style = {{fontSize : 100}}>H</Text>
-        <Text style = {{fontSize : 100}}>H</Text>
-        <Text style = {{fontSize : 100}}>H</Text>
-        <Text style = {{fontSize : 100}}>H</Text>
-        <Text style = {{fontSize : 100}}>H</Text>
-        <Text style = {{fontSize : 100}}>H</Text>
-        <Text style = {{fontSize : 100}}>H</Text>
-        <Text style = {{fontSize : 100}}>H</Text>
-      </ScrollView>
-      */
