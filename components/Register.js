@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { View, Image } from 'react-native'
 import { useNavigate } from 'react-router-native'
+import * as ImagePicker from 'expo-image-picker';
 
 import ClassicButton from './ClassicButton'
 import InriaText from './InriaText'
@@ -13,6 +14,8 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [image, setImage] = useState(require('../assets/default_pfp.jpg'));
+  const [status, requestPermission] = ImagePicker.useMediaLibraryPermissions();
 
   const registerFunc = () => {
     // proverimo da li taj email vec postoji (mozda radi auth to sam), nakon toga kreiramo ovog korisnika i ulogujemo ga (ne mora jedinstven username i nista bukv, mozda samo neka zastita za sifru, mada ovo bolje ostaviti auth-u i ne cuvati u realtime db)
@@ -22,8 +25,25 @@ const Register = () => {
     navigate("/" + email)
   }
 
-  const picPicture = () => {
-    console.log("Picture")
+  const picPicture = async () => {
+    if(!status['granted'])
+      {
+        requestPermission();
+      }
+
+    if(status['granted'])
+    {
+      let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [4, 3],
+        quality: 1,
+      });
+    
+      if (!result.canceled) {
+        setImage(result.assets[0].uri);
+      }
+    }
   }
 
   return (
@@ -41,7 +61,7 @@ const Register = () => {
         <View style = {{padding : '5%', alignItems : 'center'}}>
           <Image style = {{borderWidth : 3, borderColor : "rgba(0,0,0,0.5)", borderRadius : 75, width : 150, height : 150,
           shadowColor: '#171717', shadowOffset: {width: -1, height: 4}, shadowOpacity: 0.2, shadowRadius: 4}}
-          source = {require('../assets/default_pfp.jpg')} />
+          source = {image === require('../assets/default_pfp.jpg') ? image : { uri: image }} />
         </View>
       </View>
       
