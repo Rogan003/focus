@@ -37,7 +37,7 @@ const Activity = (props) => {
         <InriaText text = {props.activity.name} bold = {true} shadows = {false} size = {25} center = {true} />
 
         <View style = {{paddingLeft : '5%'}}>
-          <AddButton nav = 'logact' size = {35} />
+          <AddButton nav = {props.activity.name} size = {35} />
         </View>
       </View>
 

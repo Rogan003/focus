@@ -6,8 +6,8 @@ import { Text } from 'react-native';
 
 const InriaText = (props) => {
   useFonts({
-    InriaSans_400Regular,
     InriaSans_700Bold,
+    InriaSans_400Regular,
   });
 
   return (

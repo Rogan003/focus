@@ -56,7 +56,7 @@ const ProfilePage = () => {
         }
       </View>
 
-      <View style = {{display : 'flex', flexDirection : 'row', justifyContent : 'flex-end', padding : "12%"}}>
+      <View style = {{display : 'flex', flexDirection : 'row', justifyContent : 'flex-end', padding : "10%"}}>
         <AddButton nav = 'addact' size = {70} />
       </View>
     </ScrollView>

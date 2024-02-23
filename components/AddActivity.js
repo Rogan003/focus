@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 
 import { View } from 'react-native'
 import { useNavigate } from 'react-router-native'
+import { ColorPicker, toHsv, fromHsv } from 'react-native-color-picker';
+import Slider from '@react-native-community/slider'
 
 import ClassicButton from './ClassicButton'
 import InriaText from './InriaText'
@@ -12,23 +14,31 @@ const AddActivity = () => {
 
     const [activityName, setActivityName] = useState("");
     const [goal, setGoal] = useState("");
-    const [color, setColor] = useState("");
+    const [color, setColor] = useState(toHsv("black"));
 
     const addact = () => {
-      // dodavanje aktivnosti
+      // dodavanje aktivnosti, dodaje se fromHsv(color)
     }
 
     return (
       <View style = {{display : 'flex', flexDirection : 'column', justifyContent : 'space-evenly', alignItems : 'stretch'}}>
 
-        <View style = {{padding : '10%', paddingBottom : "3%", marginTop : "40%"}}>
+        <View style = {{padding : '10%', paddingBottom : "3%", marginTop : "10%"}}>
           <InriaText text = "New Activity" bold = {true} shadows = {true} size = {40} center = {true} />
         </View>
 
         <View style = {{padding : '5%'}}>
           <ClassicForm value = {activityName} setValue = {setActivityName} placeholder = "Activity..." contType = "field" />
           <ClassicForm value = {goal} setValue = {setGoal} placeholder = "Goal (minutes)..." contType = "field" />
-          <ClassicForm value = {color} setValue = {setColor} placeholder = "Color..." contType = "field" />
+          
+          <View style = {{padding : "1%", alignItems : 'center'}}>
+            <ColorPicker
+              color={color}
+              onColorChange={(color) => setColor(color)}
+              sliderComponent={Slider}
+              style = {{height : 300, width : 300}}
+            />
+          </View>
         </View>
         
         <View style = {{display : 'flex', flexDirection : 'row', justifyContent : 'center', padding : '5%', paddingTop : "0%"}}>

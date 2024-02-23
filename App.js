@@ -22,7 +22,7 @@ export default function App() {
             <Route path = "/:key" element = {<ProfilePage />} />
             <Route path = "/:key/addact" element = {<AddActivity />} />
             <Route path = "/:key/disact" element = {<DisplayField />} />
-            <Route path = "/:key/logact" element = {<LogActivity />} />
+            <Route path = "/:key/:act" element = {<LogActivity />} />
           </Routes>
       </SafeAreaView>
     </NativeRouter>
